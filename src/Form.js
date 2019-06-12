@@ -2,20 +2,27 @@ import React, { Component } from 'react'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 
-import { Form, Input, Datepicker, Textarea, SubmitBtn } from 'react-formik-ui'
+import {
+  Form,
+  Input,
+  Datepicker,
+  Textarea,
+  DropZone,
+  SubmitBtn,
+} from 'react-formik-ui'
 import { addDays } from 'date-fns'
 
 const nextWeek = addDays(new Date(), 7)
 
 class MainForm extends Component {
   onSubmit = data => {
+    console.log('called the onSubmit')
     // here you handle the data to be submitted
     console.log(data)
   }
 
   // example of validation with yup
   getSchema = () => {
-    console.log('Called')
     return yup.object().shape({
       clientName: yup
         .string()
@@ -48,6 +55,8 @@ class MainForm extends Component {
           dueDate: '',
           objective: '',
           theProblem: '',
+          budget: '',
+          files: [],
         }}
         validationSchema={this.getSchema}
         onSubmit={this.onSubmit}
@@ -66,13 +75,13 @@ class MainForm extends Component {
                 placeholder="Client Name"
                 label="Client Name"
                 required
-                autocomplete="off"
+                autoComplete="off"
               />
               <Input
                 name="projectName"
                 placeholder="Project Name"
                 label="Project Name"
-                autocomplete="off"
+                autoComplete="off"
               />
               <Datepicker name="dueDate" label="Due Date" />
               <Textarea name="objective" label="Whats the objective?" />
@@ -101,12 +110,26 @@ class MainForm extends Component {
                 name="budget"
                 placeholder="What's the budget?"
                 label="Budget"
-                autocomplete="off"
+                autoComplete="off"
               />
               <div className="competitors">
                 <h1>Competitors</h1>
+                <Input name="competitors" />
               </div>
-              <Input name="competitors" />
+              <div className="copy-section">
+                <h1>Copy</h1>
+                <div className="copy-unit">
+                  <Input name="copy1" label="Where is this for?" />
+                  <Textarea name="copyBox" label="gimme some copy" />
+                </div>
+              </div>
+              <div className="references">
+                <h1>References</h1>
+                <DropZone
+                  name="files"
+                  label="Image upload (use skitch to mark things you like if needed)"
+                />
+              </div>
               <SubmitBtn />
             </Form>
           )
