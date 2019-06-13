@@ -45,6 +45,15 @@ h1 {
   letter-spacing: 1.2px;
 }
 
+.website-link {
+  color: $colour-main-grey;
+  text-decoration: none;
+}
+
+.website-wrapper {
+  height: 28px;
+}
+
 .form {
   &-wrapper {
     display: flex;
@@ -72,9 +81,15 @@ h1 {
   }
 
   &-main-title {
-    padding: 5rem;
+    padding: 5rem 5rem 1rem 5rem;
     font-size: 3rem;
     font-weight: 100;
+  }
+
+  &-main-sub-title {
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 2rem;
   }
 
   &__input {
@@ -95,10 +110,23 @@ h1 {
     margin: 1rem;
     @include input-stuff;
   }
+
+  &__submit-btn {
+    padding: 1rem 3rem;
+    max-width: 10rem;
+    align-self: center;
+    color: $colour-main-grey;
+    font-size: 1.5rem;
+  }
 }
 
 .datePicker {
   z-index: 2;
+}
+
+.error {
+  transform: translateY(-1rem);
+  color: $colour-main-red;
 }
 
 .input-wrapper {
