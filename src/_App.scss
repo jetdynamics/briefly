@@ -1,0 +1,114 @@
+.App {
+  text-align: center;
+  background-color: $colour-main-blue;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $colour-main-grey;
+  padding-top: 5rem;
+}
+
+h1 {
+  font-weight: 100;
+}
+.main-form-wrapper {
+  width: 60vw;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  // margin-right: 3rem;
+  font-weight: 100;
+  align-self: flex-start;
+  margin: 1rem 0 0 1rem;
+  letter-spacing: 1.2px;
+}
+
+.form {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-element {
+    background: $colour-main-blue-light;
+    // background: #1a2d3c;
+    border-radius: 5px;
+    opacity: 0.8;
+    margin-bottom: 2rem !important;
+
+    &:first-child {
+      margin-right: 2rem;
+    }
+  }
+
+  &__group-double {
+    display: flex;
+
+    & > * {
+      flex: 1 1 0;
+    }
+  }
+
+  &-main-title {
+    padding: 5rem;
+    font-size: 3rem;
+    font-weight: 100;
+  }
+
+  &__input {
+    height: 3rem;
+    @include input-stuff;
+  }
+
+  &__textarea {
+    @include input-stuff;
+    width: 80%;
+    height: 5rem;
+    padding-top: 1rem;
+  }
+
+  &__datepicker {
+    width: 80%;
+    height: 3rem;
+    margin: 1rem;
+    @include input-stuff;
+  }
+}
+
+.datePicker {
+  z-index: 2;
+}
+
+.input-wrapper {
+  margin: 1rem 0;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

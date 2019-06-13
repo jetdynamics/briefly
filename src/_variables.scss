@@ -1,0 +1,21 @@
+$colour-main-blue: #282c34;
+$colour-main-blue-light: #454d59;
+$colour-main-grey: #abb2bf;
+
+@mixin input-stuff {
+  margin: 1rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+  font-weight: 100;
+  text-transform: lowercase;
+  letter-spacing: 1.2px;
+  background-color: $colour-main-blue;
+  // border: 1px solid $colour-main-grey;
+  border: none;
+  border-radius: 3px;
+  color: $colour-main-grey;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
