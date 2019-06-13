@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 
-import { Spring } from 'react-spring/renderprops'
+import { Spring, config } from 'react-spring/renderprops'
 
 import {
   Form,
@@ -51,7 +51,7 @@ class MainForm extends Component {
   renderWebsite = clientWebsite => {
     const websiteString = `http://${clientWebsite}`
     return (
-      <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+      <Spring config={config.gentle} from={{ opacity: 0 }} to={{ opacity: 1 }}>
         {props => (
           <div style={props} className="website-wrapper">
             Website:
