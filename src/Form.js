@@ -87,7 +87,7 @@ class MainForm extends Component {
               <div className="form-main-title">
                 {clientName
                   ? `${clientName} ${projectName} Brief`
-                  : 'Lets Get Started'}
+                  : 'Lets Start Something...'}
               </div>
               <div className="form-main-sub-title">
                 {clientWebsite ? (
@@ -199,4 +199,5 @@ class MainForm extends Component {
 // TODO: Add currency masking for budget field
 // TODO: add in persona builder for avatars
 // TODO: add another button for competitors
+// TODO: Make a random list of "Lets start something awesome" that randomises on load
 export default MainForm
